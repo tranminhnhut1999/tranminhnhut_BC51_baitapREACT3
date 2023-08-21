@@ -45,27 +45,28 @@ export default class ShoeShop extends Component {
     });
   };
 
-  addToCart = (Shoe) => {
+  addToCart = (shoe) => {
     // console.log(Shoe);
     const data = [...this.state.cartList];
 
     const index = data.findIndex((element) => {
-      return element.id === Shoe.id;
+      return element.id === shoe.id;
     });
     if (index !== -1) {
       data[index].soluong += 1;
     } else {
-      data.push({ ...Shoe, soLuong: 1 });
+      data.push({ ...shoe, soLuong: 1 });
     }
+    console.log(index);
 
     this.setState({
       cartList: data,
     });
   };
 
-  getShoeDetail = (Shoe) => {
+  getShoeDetail = (shoe) => {
     this.setState({
-      shoeDetail: Shoe,
+      shoeDetail: shoe,
     });
   };
 

@@ -17,21 +17,21 @@ export default class GioHang extends Component {
           <td>{element.name}</td>
           <td>
             <button
-              onClick={() => this.props.handleQuantity(element.name, false)}
+              onClick={() => this.props.handleQuantity(element.id, false)}
               className="btn btn-warning"
             >
               -
             </button>
             <span className="mx-1">{element.soLuong}</span>
             <button
-              onClick={() => this.props.handleQuantity(element.name, true)}
+              onClick={() => this.props.handleQuantity(element.id, true)}
               className="btn btn-warning"
             >
               +
             </button>
           </td>
-          <td>{element.price}</td>
-          <td>{element.price * element.soLuong}</td>
+          <td>{element.price.toLocaleString() + "$"}</td>
+          <td>{(element.price * element.soLuong).toLocaleString() + "$"}</td>
           <td>
             <button
               onClick={() => this.props.handleRemove(element.id)}
