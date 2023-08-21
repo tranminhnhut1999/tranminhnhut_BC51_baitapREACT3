@@ -19,7 +19,12 @@ export default class Shoe extends Component {
           >
             SHOW DESCRIPTION
           </button>
-          <button className="btn btn-success">THÊM GIỎ HÀNG</button>
+          <button
+            onClick={() => this.props.addToCart(this.props.element)}
+            className="btn btn-success"
+          >
+            THÊM GIỎ HÀNG
+          </button>
         </div>
       </div>
     );

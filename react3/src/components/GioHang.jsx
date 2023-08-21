@@ -4,37 +4,37 @@ export default class GioHang extends Component {
   renderContent = () => {
     return this.props.cartList.map((element) => {
       return (
-        <tr key={element.maSP}>
-          <td>{element.maSP}</td>
+        <tr key={element.id}>
+          <td>{element.id}</td>
           <td>
             <img
               width={50}
-              src={element.hinhAnh}
+              src={element.image}
               className="img-fluid"
-              alt="phone"
+              alt="shoe"
             />
           </td>
-          <td>{element.tenSP}</td>
+          <td>{element.name}</td>
           <td>
             <button
-              onClick={() => this.props.handleQuantity(element.maSP, false)}
+              onClick={() => this.props.handleQuantity(element.name, false)}
               className="btn btn-warning"
             >
               -
             </button>
             <span className="mx-1">{element.soLuong}</span>
             <button
-              onClick={() => this.props.handleQuantity(element.maSP, true)}
+              onClick={() => this.props.handleQuantity(element.name, true)}
               className="btn btn-warning"
             >
               +
             </button>
           </td>
-          <td>{element.giaBan.toLocaleString()}</td>
-          <td>{(element.giaBan * element.soLuong).toLocaleString()}</td>
+          <td>{element.price}</td>
+          <td>{element.price * element.soLuong}</td>
           <td>
             <button
-              onClick={() => this.props.handleRemove(element.maSP)}
+              onClick={() => this.props.handleRemove(element.id)}
               className="btn btn-danger"
             >
               XÓA
